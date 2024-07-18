@@ -10,17 +10,20 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="master.css" />
-    <title>Q3</title>
+    <title>Email</title>
   </head>
   <body>
     <div class="container bg-warning p-5 position-relative">
       <button id="btn" class="btn mb-3 btn-primary">Toggle Message</button>
-      <div id="msg" class=" bg-light rounded p-2 ">
+      <div id="msg" class="bg-light rounded p-2">
         You have recieved new message <a href="msg.html">MSG</a>
         <span
-          class="bg-primary rounded-5 d-flex align-items-center justify-content-center "
+          class="bg-primary rounded-5 d-flex align-items-center justify-content-center"
           >X</span
         >
+        <div id="myProgress" class="rounded">
+          <div id="myBar" class="rounded"></div>
+        </div>
       </div>
     </div>
     <script src="main.js"></script>

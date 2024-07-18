@@ -8,15 +8,36 @@ function disapperSpan() {
 span.addEventListener("click", () => {
   disapperSpan();
 });
-let countDown = setTimeout(() => {
-  disapperSpan();
-}, 7000);
-
+// happen once
+let countDown = setTimeout(disapperSpan, 7000);
+// need to disappear it every 3000MS
 let repeats = setInterval(() => {
   spanParent.classList.remove("hidden");
-}, 60 * 1000);
+  setTimeout(disapperSpan, 7000);
+  move();
+}, 10000);
 
 btn.addEventListener("click", () => {
   clearInterval(repeats);
   clearTimeout(countDown);
 });
+// create the progressBar
+let element = document.querySelector("#myBar");
+let i = 0;
+function move() {
+  if (i === 0) {
+    i = 1;
+    let width = 1;
+    let repeat = setInterval(progress, 70);
+    function progress() {
+      if (width >= 100) {
+        i = 0;
+        clearInterval(repeat);
+      } else {
+        ++width;
+        element.style.width = `${width}%`;
+      }
+    }
+  }
+}
+move();
